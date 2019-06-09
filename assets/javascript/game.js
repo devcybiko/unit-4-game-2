@@ -3,7 +3,7 @@ var woody = {
     attack: 20,
     hp: 120,
     counter: 20,
-    pic:"assets/images/woody.png"
+    pic: "assets/images/woody.png"
 };
 var buzz = {
     attack: 10,
@@ -26,52 +26,38 @@ var jessie = {
 
 var attacker;
 var defender;
-var 
 
+var where = ["#attacker", "#defender", false];
+var iWhere = 0;
 //function firstClick(){
-    
-$("#woody").one("click", function(){
-    $("#character-one").html(" ");
-    $("#attacker").html('<img alt="woody" id="woody" src="assets/images/woody.png">')
-    secondClick();
-});
-$("#lightyear").one("click", function(){
-    $("#character-two").html(" ");
-    $("#attacker").html('<img alt="buzz" id="lightyear" src="assets/images/buzz.png">')
-    secondClick();
-});
-$("#bullseye").one("click", function(){
-    $("#character-three").html(" ");
-    $("#attacker").html('<img alt="bullseye" id="bullseye" src="assets/images/bullseye.png">')
-    secondClick();
-});
-$("#jessie").one("click", function(){
-    $("#character-four").html(" ");
-    $("#attacker").html('<img alt="jessie" id="jessie" src="assets/images/jessie.png">')
-    secondClick();
-});
-//};
 
-//firstClick();
-
-function secondClick(){
-
-$("#woody").one("click", function(){
-    $("#character-one").html(" ");
-    $("#defender").html('<img alt="woody" id="woody" src="assets/images/woody.png">')
+$("#woody").on("click", function () {
+    if (where[iWhere]) {
+        $("#character-one").html(" ");
+        $(where[iWhere]).html('<img alt="woody" id="woody" src="assets/images/woody.png">')
+        iWhere++;
+    }
 });
-$("#lightyear").one("click", function(){
-    $("#character-two").html(" ");
-    $("#defender").html('<img alt="buzz" id="lightyear" src="assets/images/buzz.png">')
+$("#lightyear").on("click", function () {
+    if (where[iWhere]) {
+        $("#character-two").html(" ");
+        $(where[iWhere]).html('<img alt="buzz" id="lightyear" src="assets/images/buzz.png">')
+        iWhere++;
+    }
 });
-$("#bullseye").one("click", function(){
-    $("#character-three").html(" ");
-    $("#defender").html('<img alt="bullseye" id="bullseye" src="assets/images/bullseye.png">')
+$("#bullseye").on("click", function () {
+    if (where[iWhere]) {
+        $("#character-three").html(" ");
+        $(where[iWhere]).html('<img alt="bullseye" id="bullseye" src="assets/images/bullseye.png">')
+        iWhere++;
+    }
 });
-$("#jessie").one("click", function(){
-    $("#character-four").html(" ");
-    $("#defender").html('<img alt="jessie" id="jessie" src="assets/images/jessie.png">')
+$("#jessie").on("click", function () {
+    if (where[iWhere]) {
+        $("#character-four").html(" ");
+        $(where[iWhere]).html('<img alt="jessie" id="jessie" src="assets/images/jessie.png">')
+        iWhere++;
+    }
 });
 
-};
 
