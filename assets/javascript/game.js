@@ -32,6 +32,8 @@ var jessie = {
     myname: "jessie"
 };
 
+const ATTACKER=0;
+const DEFENDER=1;
 var players = [];
 
 var where = ["#attacker", "#defender", false];
@@ -44,7 +46,7 @@ function firstclick(event) {
     if (where[iWhere]) {
         $(obj.mydiv).html(" ");
         $(where[iWhere]).html('<img alt="' + obj.myname + '" id="' + '" src="' + obj.pic + '">')
-        player[iWhere] = obj
+        players[iWhere] = obj;
         iWhere++;
     }
 }
@@ -58,4 +60,9 @@ console.log("4");
 $("#jessie").on("click", jessie, firstclick);
 console.log("5");
 
-
+$("#attack-button").on("click", function() {
+    alert(players[ATTACKER].myname);
+});
+$("#defend-button").on("click", function() {
+    alert(players[DEFENDER].myname);
+});
